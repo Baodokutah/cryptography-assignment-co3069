@@ -25,7 +25,7 @@ def rail_fence_brute_force(ciphertext, top_n=10):
 def combined_brute_force(ciphertext, top_n=10):
     potential_texts = []
     for shift in range(26):
-        for num_rails in range(2, 6):
+        for num_rails in range(2, 30):
             try:
                 cipher = CombinedCipher(shift, num_rails)
                 decrypted_text = cipher.decrypt(ciphertext)
