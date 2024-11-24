@@ -22,10 +22,6 @@ This is an assignment for **Cryptography and Network Security (CO3069)**, focusi
 
 - Python 3.7 or higher
 
-Install the dependencies with:
-```bash
-pip install -r requirements.txt
-```
 ## How to Run
 
 1. Clone this repository:
