@@ -1,8 +1,6 @@
-# scoring.py
-
 import string
 import re
-
+# source: https://en.wikipedia.org/wiki/Most_common_words_in_English
 common_words = set([
     'the', 'be', 'to', 'of', 'and', 'a', 'in', 'that', 'have', 'i',
     'it', 'for', 'not', 'on', 'with', 'he', 'as', 'you', 'do', 'at',
@@ -16,16 +14,16 @@ common_words = set([
     'back', 'after', 'use', 'two', 'how', 'our', 'work', 'first',
     'well', 'way', 'even', 'new', 'want', 'because', 'any', 'these',
     'give', 'day', 'most', 'us'
-    # Add more words or use a dictionary file
 ])
 
 def english_score(text):
+    # source: http://practicalcryptography.com/cryptanalysis/letter-frequencies-various-languages/english-letter-frequencies/
     frequencies = {
-        'E': 12.70, 'T': 9.06, 'A': 8.17, 'O': 7.51, 'I': 6.97, 'N': 6.75,
-        'S': 6.33, 'H': 6.09, 'R': 5.99, 'D': 4.25, 'L': 4.03, 'C': 2.78,
-        'U': 2.76, 'M': 2.41, 'W': 2.36, 'F': 2.23, 'G': 2.02, 'Y': 1.97,
-        'P': 1.93, 'B': 1.29, 'V': 0.98, 'K': 0.77, 'J': 0.15, 'X': 0.15,
-        'Q': 0.10, 'Z': 0.07
+        'E': 12.10, 'T': 8.94, 'A': 8.55, 'O': 7.47, 'I': 7.33, 'N': 7.17,
+        'S': 6.73, 'R': 6.33, 'H': 4.96, 'L': 4.21, 'D': 3.87, 'C': 3.16,
+        'U': 2.68, 'M': 2.53, 'F': 2.18, 'G': 2.09, 'P': 2.07, 'W': 1.83,
+        'Y': 1.72, 'B': 1.60, 'V': 1.06, 'K': 0.81, 'J': 0.22, 'X': 0.19,
+        'Z': 0.11, 'Q': 0.10 
     }
     text_upper = text.upper()
     text_letters = [c for c in text_upper if c in string.ascii_uppercase]
