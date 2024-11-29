@@ -13,7 +13,7 @@ def caesar_brute_force(ciphertext, top_n=10):
 
 def rail_fence_brute_force(ciphertext, top_n=10):
     potential_texts = []
-    max_rails = min(30, len(ciphertext) // 2)
+    max_rails = min(20, len(ciphertext) // 2)
     for num_rails in range(2, max_rails + 1):
         cipher = RailFenceCipher(num_rails)
         decrypted_text = cipher.decrypt(ciphertext)
@@ -25,7 +25,7 @@ def rail_fence_brute_force(ciphertext, top_n=10):
 def combined_brute_force(ciphertext, top_n=10):
     potential_texts = []
     for shift in range(26):
-        for num_rails in range(2, 30):
+        for num_rails in range(2, 20):
             try:
                 cipher = CombinedCipher(shift, num_rails)
                 decrypted_text = cipher.decrypt(ciphertext)

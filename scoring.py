@@ -41,5 +41,5 @@ def english_score(text):
         valid_words = sum(1 for word in words_in_text if word in common_words)
         word_score = valid_words / len(words_in_text)
     
-    combined_score = (letter_score * 0.3) + (word_score * 70)
+    combined_score = (letter_score * 0.3) + (word_score * 0.7)
     return combined_score
