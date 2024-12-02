@@ -27,7 +27,7 @@ class CaesarCipher(Cipher):
         original_shift = self.shift
         self.shift = -self.shift
         decrypted_text = self.encrypt(text)
-        self.shift = original_shift  # Restore original shift
+        self.shift = original_shift  
         return decrypted_text
 
 class RailFenceCipher(Cipher):
@@ -59,7 +59,6 @@ class RailFenceCipher(Cipher):
         dir_down = None
         row, col = 0, 0
 
-        # Mark positions
         for i in range(len(ciphertext)):
             if row == 0:
                 dir_down = True
@@ -74,7 +73,6 @@ class RailFenceCipher(Cipher):
             else:
                 row -= 1
 
-        # Fill rail matrix
         index = 0
         for i in range(self.num_rails):
             for j in range(len(ciphertext)):
@@ -82,7 +80,6 @@ class RailFenceCipher(Cipher):
                     rail[i][j] = ciphertext[index]
                     index += 1
 
-        # Read the matrix
         result = []
         row, col = 0, 0
         for i in range(len(ciphertext)):
